@@ -1,0 +1,35 @@
+1 Objective
+    Implement HMM Tagger using Viterbi algorithm for part-of-speech tagging with bigram assumption. Train and test the system using Brown corpus.
+    
+2 Resources Used
+    • Corpus : Brown Corpus
+    • Programming Language : Python 2.7.12
+    • Decoding : The Viterbi algorithm
+    
+3 Brief Description
+  • Given a sequence of words ,the problem is to assign a correct tag to each
+  word in a sentence.In order to solve this problem, we used HMM to provide
+  probable tag sequence.
+  • HMM stands for Hidden Markov Model.It allows us to talk about both
+  observed events (like words) and hidden events (like POS tag).
+  
+4 Assumption
+  • Bigram Assumption: The probability of a particular state depends only on the previous state.
+  • Output independence: The probability of an observation depends only on the state that produced it.
+  • We should provide input sentences which is present in the corpus.
+  • Input sentence should not contain double space.
+  
+5 Procedure
+    a. Read the Brown Corpus stored in a file
+        (a) Create a list containing tuples of word and its corresponding tag
+        (b) Created two separate dictionary one for look-up of tagged word and other for look-up of tag.
+        
+    b. Taking the input sentence and split it to create a list of words and create tag list
+    
+    c. Creation of Transition and observation table :-    
+        (a) Estimate the transition tables corresponding to each tag by using tag dictionary.
+        (b) Estimate the observation tables by using tagged word dictionary
+        
+    d. Call the Viterbi function by passing four arguments word list, tag list,transition table, observation table
+    
+    e. Finally HMM POS tagger gives probable tag sequence as output
